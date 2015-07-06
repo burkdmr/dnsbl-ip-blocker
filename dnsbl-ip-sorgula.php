@@ -2,59 +2,59 @@
 
 function dnsblSorgula($ip){
 
-    //Reverse IP oluşturuyoruz.
+    //Reverse IP oluÃ¾turuyoruz.
     $reverse_ip = implode(".", array_reverse(explode(".", $ip)));
 
-    //Spamhaus XBL Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //Spamhaus XBL Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".xbl.spamhaus.org.", "A")) {
         echo '<span style="color: red">Spamhaus XBL</span><br/>';
     }else{
         echo '<span style="color: green">Spamhaus XBL</span><br/>';
     }
 
-    //Spamhaus SBL Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //Spamhaus SBL Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".sbl.spamhaus.org.", "A")) {
         echo '<span style="color: red">Spamhaus SBL</span><br/>';
     }else{
         echo '<span style="color: green">Spamhaus SBL</span><br/>';
     }
 
-    //Spamhaus PBL Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //Spamhaus PBL Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".pbl.spamhaus.org.", "A")) {
         echo '<span style="color: red">Spamhaus PBL</span><br/>';
     }else{
         echo '<span style="color: green">Spamhaus PBL</span><br/>';
     }
 
-    //Spamhaus ZEN Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //Spamhaus ZEN Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".zen.spamhaus.org.", "A")) {
         echo '<span style="color: red">Spamhaus ZEN</span><br/>';
     }else{
         echo '<span style="color: green">Spamhaus ZEN</span><br/>';
     }
 
-    //Spamhaus SBL-XBL Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //Spamhaus SBL-XBL Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".sbl-xbl.spamhaus.org.", "A")) {
         echo '<span style="color: red">Spamhaus SBL-XBL</span><br/>';
     }else{
         echo '<span style="color: green">Spamhaus SBL-XBL</span><br/>';
     }
 
-    //Barracuda Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //Barracuda Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".b.barracudacentral.org.", "A")) {
         echo '<span style="color: red">Barracuda</span><br/>';
     }else{
         echo '<span style="color: green">Barracuda</span><br/>';
     }
 
-    //SORBS Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //SORBS Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".dnsbl.sorbs.net.", "A")) {
         echo '<span style="color: red">SORBS</span><br/>';
     }else{
         echo '<span style="color: green">SORBS</span><br/>';
     }
 
-    //SpamCop Sorguluyoruz. Eğer spam listesinde ip adresi yer alıyorsa Kırmızı yer almıyorsa yeşil çıktı alıyoruz.
+    //SpamCop Sorguluyoruz. EÃ°er spam listesinde ip adresi yer alÃ½yorsa KÃ½rmÃ½zÃ½ yer almÃ½yorsa yeÃ¾il Ã§Ã½ktÃ½ alÃ½yoruz.
     if (checkdnsrr($reverse_ip . ".bl.spamcop.net.", "A")) {
         echo '<span style="color: red">SpamCop </span><br/>';
     }else{
@@ -62,8 +62,4 @@ function dnsblSorgula($ip){
     }
 
 }
-
-
-
-dnsblSorgula("78.172.174.45");
 ?>
